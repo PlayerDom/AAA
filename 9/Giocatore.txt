@@ -1,0 +1,35 @@
+using Microsoft.VisualBasic;
+using System.Reflection.Metadata.Ecma335;
+
+namespace ProvaPratica_3
+{
+    public class Giocatore
+    {
+        public string Nome { get; set; } = string.Empty;
+        
+        public List<double> Punteggio { get; set; } 
+
+        public double PunteggioMigliore () 
+        {
+           return Punteggio.Max();
+        }
+
+        public double UltimoPunteggio()
+        {
+            return Punteggio.Last();
+        }
+
+        public (double, double, double) MiglioriTrePunteggi()
+        {
+            List<double> ListaPunteggi = Punteggio.ToList();
+            ListaPunteggi.Sort();
+            ListaPunteggi.Reverse();
+            (double, double, double) TreMigliori = (ListaPunteggi.ElementAt(0), ListaPunteggi.ElementAt(1), ListaPunteggi.ElementAt(2));
+
+            return TreMigliori;
+
+        }
+
+
+    }
+}

@@ -1,0 +1,53 @@
+using Microsoft.VisualBasic;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+
+
+namespace ProvaPratica1
+{
+    internal class Strain
+    {
+
+        static public bool Dispari(int numero) { return numero % 2 != 0; }
+        static public bool Pari(int numero) { return numero % 2 == 0; }
+       
+        static public List<int> Keep(List<int>? Input, Predicate<int> predicate)
+        {
+            List<int> lista = new();
+
+            foreach (int numero in Input)
+            {
+
+                if (predicate(numero))
+                {
+                    lista.Add(numero);
+                }
+
+            }
+            return lista;
+        }
+
+        static public List<int> Discard(List<int>? Input, Predicate<int> predicate)
+        {
+            List<int> lista = new();
+
+            foreach (int numero in Input)
+            {
+
+                if (predicate(numero))
+                {
+                    lista.Add(numero);
+                }
+
+            }
+            return lista;
+        }
+
+
+
+    }
+}

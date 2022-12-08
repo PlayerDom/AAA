@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Windows;
+
+delegate List<int> Keep();
+
+namespace ProvaPratica1
+{
+    /// <summary>
+    /// Interaction logic for MainWindow.xaml
+    /// </summary>
+    public partial class MainWindow : Window
+    {
+        static public List<int>? lista = new()
+           {
+              7,3,6,2,1,5,9,4,8,
+           };
+        public MainWindow()
+        {
+            InitializeComponent();
+        }
+
+        private void ClickPari(object sender, RoutedEventArgs e)
+        {
+            TB_Keep.Text =String.Join(" ", Strain.Keep(lista, Strain.Pari));
+            TB_Discard.Text = String.Join(" ", Strain.Discard(lista, Strain.Dispari));
+        }
+
+        private void ClickDispari(object sender, RoutedEventArgs e)
+        {
+            TB_Keep.Text = String.Join(" ", Strain.Keep(lista, Strain.Dispari));
+            TB_Discard.Text = String.Join(" ", Strain.Discard(lista, Strain.Pari));
+        }
+    }
+}

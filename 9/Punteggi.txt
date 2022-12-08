@@ -1,0 +1,29 @@
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using static System.Net.Mime.MediaTypeNames;
+
+namespace ProvaPratica_3.Pages
+{
+    public class GiocatoreModel : PageModel
+    {
+        [BindProperty]
+        public Giocatore Giocatore { get; set; } = new();
+
+        public GiocatoreModel()
+        {
+            Giocatore.Nome = "Domiziano";
+           
+            Giocatore.Punteggio = new List<double> {
+                 2000000, 3000000 ,5000300, 2003200, 3130320 ,5043200,
+                 1402030, 2032010 ,4256147, 1268456, 6254104 ,2546341
+            };
+            Giocatore.UltimoPunteggio();
+            Giocatore.PunteggioMigliore();
+             Giocatore.MiglioriTrePunteggi();
+        }
+        public void OnGet()
+        {
+        }
+    }
+}
+

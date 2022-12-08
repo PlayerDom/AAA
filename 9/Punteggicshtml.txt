@@ -1,0 +1,38 @@
+@page
+@model ProvaPratica_3.Pages.GiocatoreModel
+@{
+    ViewData["Title"] = "Giocatore";
+}
+
+
+<div class="text-center">
+    
+    <h3>Giocatore: @Model.Giocatore.Nome</h3>
+   
+</div>
+<hr />
+
+
+<div class="text-center">
+    
+    <h3>Ultimo punteggio:@Model.Giocatore.UltimoPunteggio()            Il tuo punteggio migliore @Model.Giocatore.PunteggioMigliore()</h3>
+    <hr /> 
+    <h3>I tre punteggi migliori:@Model.Giocatore.MiglioriTrePunteggi() </h3>
+    <hr />
+
+</div>
+<div class="text-center">
+
+    <h3><-- Punteggi --></h3>
+     <table class="table">
+        <tbody>
+            @foreach (var Score in Model.Giocatore.Punteggio)
+            {
+                    <tr>
+                        <td>@Score</td>
+                    </tr>
+            }
+        </tbody>
+    </table>
+</div>
+<hr />

@@ -1,0 +1,10 @@
+<StackPanel>
+        <Label x:Name="Intestazione" Content="Quale predicato vuoi usare per Keep?" FontSize="18" HorizontalAlignment="Center" ></Label>
+        <Button x:Name="Pari" Width="80" Height="30" Content="Pari" Margin="-150,0,0,0" Click="ClickPari"/>
+        <Button x:Name="Dispari" Width="80" Height="30" Content="Dispari" Margin="0,-30,-150,0" Click="ClickDispari" />
+
+        <Label x:Name="Keep" Content="Keep:" Margin="126,70,0,0" FontWeight="Bold" FontSize="20" ></Label>
+        <TextBox x:Name="TB_Keep" Width="400" Height="25" Margin="-17,-30,0,0" ></TextBox>
+        <Label x:Name="Discard" Content="Discard:" Margin="106,-2,0,0" FontWeight="Bold" FontSize="20" ></Label>
+        <TextBox x:Name="TB_Discard" Width="400" Height="25" Margin="-17,-30,0,0" ></TextBox>
+    </StackPanel>

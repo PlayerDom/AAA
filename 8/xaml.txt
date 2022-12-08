@@ -1,0 +1,7 @@
+ <StackPanel Margin="-1,0,1,0">
+        <ComboBox x:Name="ResistorColor" Width="120" SelectionChanged="ComboBox_SelectionChanged"  SelectedIndex="0"/>
+
+
+        <Label x:Name="Resistenza" FontSize="20" Margin="262,0,0,0">Resistenza:</Label>
+        <TextBox x:Name="ValoreResistenza" Width="200" Height="25" Margin="155,-33,0,0"/>
+ </StackPanel>
