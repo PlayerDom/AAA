@@ -1,23 +1,26 @@
 #include<iostream>
+using namespace std;
+
+int main()
+{
+    string str;
+    std::cout << "Inserisci una stringa ";
+    std::getline(std::cin,str);
+    int i {0};
 
 
-int main(){
+    for(char c: str){
+    	if(str[i]>97 && str[i]<123 && i==0){
+    		str[i]=std::toupper(str[i]);
+    	}else if (c == ' ' && str[i+1]!=' '){
+    		if(str[i+1]>97 && str[i+1]<123){
+    			str[i+1]=std::toupper(str[i+1]);
+    		}
+    	}
+    	i++;
+    }
 
-	std::string stringa;
-	  std::cout << "Inserisci una stringa ";
-	  std::getline(std::cin,stringa);
-
-	for(int i{0}; i<stringa.length(); i++){
-		if (stringa[i]>97 && stringa[i]<123){
-			stringa[i]= std::toupper(stringa[i]);
-
-		} else if (stringa[i]>64 && stringa[i]<91){
-			stringa[i]= std::tolower(stringa[i]);
-		}
-	}
-
-	std::cout << stringa;
-	return EXIT_SUCCESS;
+    std::cout << str;
+    return EXIT_SUCCESS;
 }
-
 
